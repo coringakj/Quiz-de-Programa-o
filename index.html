@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quiz para programadores</title>
+    <meta name="description" content="Um quiz interativo para testar seus conhecimentos em programação." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <h1>Quiz interativo para programadores</h1>
+      <p>Teste seus conhecimentos em programação e veja qual pontuação você consegue fazer!</p>
+    </header>
+
+    <main>
+      <!-- introdução -->
+      <section aria-labelledby="sobre-quiz">
+        <h2 id="sobre-quiz">Sobre este quiz</h2>
+        <p>
+          <strong>Este quiz</strong> foi desenvolvido com o objetivo de testar seus conhecimentos em programação, como
+          <em>linguagens de programação</em>, conceitos básicos e mais.
+        </p>
+        <p>
+          Você encontrará diversos tipos de perguntas, incluindo múltipla escolha, texto e perguntas de data.
+          <br />Desafie-se com este quiz!
+        </p>
+        <p>
+          Você poderá encontrar alguns acrônimos como
+          <abbr title="HyperText Markup Language">HTML</abbr> e
+          <abbr title="Cascading Style Sheets">CSS</abbr>, que são comumente usados em questões relacionadas ao desenvolvimento web.
+        </p>
+      </section>
+
+      <!-- Usei um único form para todo o quiz (pode ser um por pergunta também) -->
+      <form id="quiz" method="post" action="#">
+        <!-- pergunta 1: múltipla escolha -->
+        <section>
+          <fieldset>
+            <legend>Pergunta 1: Qual é a linguagem usada para estruturar páginas web?</legend>
+
+            <div>
+              <input type="radio" value="Python" id="p1a" name="pergunta1" />
+              <label for="p1a">Python</label>
+            </div>
+
+            <div>
+              <input type="radio" value="HTML" id="p1b" name="pergunta1" />
+              <label for="p1b">HTML</label>
+            </div>
+
+            <div>
+              <input type="radio" value="JavaScript" id="p1c" name="pergunta1" />
+              <label for="p1c">JavaScript</label>
+            </div>
+
+            <div>
+              <input type="radio" value="Ruby" id="p1d" name="pergunta1" />
+              <label for="p1d">Ruby</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <!-- pergunta 2: texto -->
+        <section>
+          <label for="p2">
+            Pergunta 2: Na URL https://www.google.com o trecho “google.com” é o _________
+          </label>
+          <input type="text" id="p2" name="pergunta2" placeholder="Digite a sua resposta..." />
+        </section>
+
+        <!-- pergunta 3: senha -->
+        <section>
+          <label for="p3">Pergunta 3: Escreva um exemplo de senha forte</label>
+          <input type="password" id="p3" name="pergunta3" placeholder="Digite uma senha..." />
+          <small>Use 1 letra maiúscula, 1 minúscula, 1 caractere especial e números. Ex.: Abc.1234</small>
+        </section>
+
+        <!-- pergunta 4: data -->
+        <section>
+          <label for="p4">Pergunta 4: Em que ano o HTML lançou sua primeira versão?</label>
+          <input type="date" id="p4" name="pergunta4" />
+        </section>
+
+        <!-- pergunta 5: seleção múltipla -->
+        <section>
+          <fieldset>
+            <legend>Pergunta 5: Quais dessas tecnologias são consideradas linguagens de programação?</legend>
+
+            <div>
+              <input type="checkbox" id="p5a" name="pergunta5" value="JavaScript" />
+              <label for="p5a">JavaScript</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="p5b" name="pergunta5" value="HTML" />
+              <label for="p5b">HTML</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="p5c" name="pergunta5" value="Java" />
+              <label for="p5c">Java</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="p5d" name="pergunta5" value="CSS" />
+              <label for="p5d">CSS</label>
+            </div>
+          </fieldset>
+        </section>
+
+        <!-- pergunta 6: upload de arquivo -->
+        <section>
+          <label for="p6">Pergunta 6: Faça um upload de um arquivo contendo código HTML</label><br />
+          <input type="file" id="p6" name="pergunta6" accept=".html,.htm" />
+        </section>
+        <!--pergunta 7-->
+        <section>
+            <h2>Pergunta 7: Selecione o atributo do input que dedfine o seu tipo:</h2>
+            <form>
+                <select name="Pergunta7" id="p7">
+                    <option value="id">id</option>
+                    <option value="type">type</option>
+                    <option value="placeholder">placeholder</option>
+                </select>
+            </form>
+        </section>
+        <!-- pergunta 8: imagem + resposta -->
+        <section>
+          <h2>Pergunta 8: Qual linguagem de programação é representada pelo logotipo abaixo?</h2>
+          <figure>
+            <img src="java.png" alt="Logotipo da linguagem Java" />
+            <figcaption>Figura 1: Logotipo de uma linguagem de programação</figcaption>
+          </figure>
+          <label for="p8r" class="visually-hidden">Resposta da Pergunta 8</label>
+          <input type="text" id="p8r" name="pergunta8" placeholder="Digite a sua resposta" />
+        </section>
+
+        <section>
+          <button type="submit">Enviar respostas</button>
+        </section>
+      </form>
+
+      <!-- tabela de pontuação -->
+      <section aria-labelledby="tabela-pontuacao">
+        <h2 id="tabela-pontuacao">Tabela de pontuação</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Pontuação</th>
+              <th>Avaliação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–2</td>
+              <td>Não desista! Cada tentativa é uma oportunidade de aprender.</td>
+            </tr>
+            <tr>
+              <td>3–4</td>
+              <td>Você ainda precisa melhorar. Que tal estudar mais sobre programação?</td>
+            </tr>
+            <tr>
+              <td>5–7</td>
+              <td>Bom! Seu conhecimento em programação está bom, mas pode melhorar.</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Perfeito! Você está muito bem informado sobre programação.</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Boa sorte na próxima! Estude mais para melhorar seu conhecimento.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- lista de respostas -->
+      <section aria-labelledby="gabarito">
+        <h2 id="gabarito">Verifique suas respostas</h2>
+       <details>
+        <summary>Clique aqui para ver as respostas do quiz</summary>
+        <ol>
+          <li>HTML</li>
+          <li>Domínio</li>
+          <li>Abc.1234 (1 maiúscula, 1 minúscula, 1 caractere especial e números)</li>
+          <li>1991</li>
+          <li>JavaScript e Java</li>
+          <li>Arquivo deve ter extensão .html</li>
+          <li>Type</li>
+          <li>Java</li>
+        </ol>
+        </details>
+      </section>
+      <section>
+        <h2>Nos de o seu feedback</h2>
+        <form>
+            <fieldset>
+                <legend>Informações de contato</legend>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome"><br>
+             <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="comentarios">comentarios</label><br>
+            <textarea id="comentarios" name="comentarios" rows="7" cols="50" placeholder="Digite seus comentarios aqui"></textarea>
+            </fieldset>
+
+        </form>
+      </section>
+    </main>
+
+    <footer>
+        <p>¨&copy Quiz de programação. Todos os direitos reservados</p>
+    </footer>
+    <body style="background-color: rgb(250, 232, 211);"></body>
+    <style>
+      /* Acessibilidade opcional para rótulos ocultos visualmente */
+      .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+      }
+
+      /* Estilinho básico (opcional) */
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; padding: 16px; }
+      section { margin-block: 16px; }
+      fieldset { border: 1px solid #ccc; padding: 12px; border-radius: 8px; }
+      legend { padding: 0 6px; }
+      input[type="text"], input[type="password"], input[type="date"], input[type="file"] {
+        margin-top: 6px; margin-bottom: 8px; display: block;
+      }
+      button { padding: 8px 14px; border: 0; border-radius: 6px; background: #2563eb; color: #fff; cursor: pointer; }
+      button:hover { background: #1d4ed8; }
+    </style>
+  </body>
+</html>
